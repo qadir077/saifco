@@ -72,25 +72,17 @@ export default function About() {
    
   </h2>
 
-<div
-  className="
-    max-w-5xl
-    h-[2px]
-    mx-auto
-    mt-4
-    bg-gradient-to-r
-    from-transparent
-    via-lime-400
-    to-transparent
-    shadow-[0_0_20px_rgba(163,230,53,0.8)]
-  "
-/>
+
 
   <p className="max-w-2xl mx-auto mt-4 text-zinc-400 text-lg leading-relaxed">
     We craft sophisticated interiors that blend timeless elegance,
     modern functionality, and exceptional craftsmanship to create
     spaces that inspire every day.
   </p>
+  <div className="relative max-w-5xl mx-auto mt-4 h-[2px]">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-400 to-transparent" />
+            <div className="absolute inset-0 blur-md bg-gradient-to-r from-transparent via-lime-400/80 to-transparent" />
+          </div>
 </div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-center">

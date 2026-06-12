@@ -14,49 +14,49 @@ const services = [
     icon: Home,
     title: "Interior Design",
     description:
-      "Conceptualizing environments that reflect your personal identity and lifestyle.",
+      "Bespoke residential and commercial interiors crafted to reflect your personality, lifestyle, and vision while maintaining perfect balance between luxury and functionality.",
   },
   {
     icon: Building2,
     title: "Civil Works",
     description:
-      "Precise structural enhancements and architectural modifications for modern utility.",
+      "Comprehensive structural modifications, construction solutions, and architectural enhancements executed with precision, durability, and modern engineering standards.",
   },
   {
     icon: Armchair,
     title: "Furniture",
     description:
-      "Curated, bespoke furniture pieces that serve as functional art within your space.",
+      "Custom-designed furniture pieces tailored to your space, combining premium materials, exceptional craftsmanship, and timeless aesthetics.",
   },
   {
     icon: KeyRound,
     title: "Turnkey Solutions",
     description:
-      "Complete project execution from concept development to final handover.",
+      "Complete project execution from concept development and planning to final installation, ensuring a seamless and hassle-free experience.",
   },
   {
     icon: Paintbrush,
     title: "False Ceiling",
     description:
-      "Modern ceiling concepts with ambient lighting and premium finishes.",
+      "Elegant ceiling designs featuring modern patterns, concealed lighting, and premium finishes that elevate the visual appeal of every room.",
   },
   {
     icon: LampFloor,
     title: "Lighting Design",
     description:
-      "Layered lighting solutions that enhance mood, elegance, and functionality.",
+      "Layered lighting concepts that enhance ambiance, highlight architectural features, and create sophisticated living and working environments.",
   },
   {
     icon: LayoutGrid,
     title: "Space Planning",
     description:
-      "Strategic layouts designed to maximize flow, comfort, and usability.",
+      "Intelligent space optimization and layout planning designed to maximize comfort, functionality, movement flow, and visual harmony.",
   },
   {
     icon: Warehouse,
     title: "Modular Kitchen",
     description:
-      "Luxury kitchen systems blending aesthetics, storage, and practicality.",
+      "Luxury modular kitchen solutions with smart storage systems, ergonomic layouts, and premium finishes tailored to modern lifestyles.",
   },
 ];
 
@@ -88,15 +88,15 @@ export default function Services() {
             What We Do
           </span>
 
-          <h2 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-bold leading-[0.95]">
+          <h2 className="mt-4 text-5xl md:text-6xl xl:text-7xl font-bold leading-[0.95]">
             Premium Interior
-            <br />
-            <span className="text-lime-400">
+
+            <span className=" ml-4 text-lime-400">
               Design Services
             </span>
           </h2>
 
-          <p className="max-w-2xl mx-auto mt-8 text-zinc-400 text-lg leading-relaxed">
+          <p className="max-w-2xl mx-auto mt-4 text-zinc-400 text-lg leading-relaxed">
             We provide complete interior solutions that combine luxury,
             functionality, and timeless aesthetics to transform ordinary
             spaces into extraordinary experiences.
@@ -219,8 +219,7 @@ export default function Services() {
               py-4
               rounded-full
               font-bold
-              shadow-[0_0_30px_rgba(163,230,53,0.35)]
-              hover:shadow-[0_0_60px_rgba(163,230,53,0.7)]
+shadow-[0_0_30px_rgba(163,230,53,0.9)]
               hover:scale-105
               transition-all
               duration-500

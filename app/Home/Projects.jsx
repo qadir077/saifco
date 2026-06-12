@@ -2,90 +2,222 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "The Obsidian Suite",
-    category: "RESIDENTIAL",
+    title: "Modern Luxury Villa",
+    category: "Residential",
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBanDUE6heuOdpszTenlrpX3A65P1ils8KJCA8LqvoMJiVsEg6qCgrNNsF9EYV462RVmGZOlPb2uIyT1wfu4kgCRqd6aNsmtrxZzjMQgY7QNgkQiF0sbBMp_q_ILMBw40af3bR7xt5YCW7MJ3LG0IVVaXHMKzkijqMuYBWcMiWKSsRABJqwJZjbt0UdINwJr1bJl_vT8NbIyM_yuo2RrS0mHwtkjixJb1kBDcxby1zNbC3wPHpOHVFKJJ0ku61YbRaGzKBYeFPAppQ",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop",
+    large: true,
   },
   {
-    title: "Skyline Villa",
-    category: "EXTERIOR",
+    title: "Executive Office",
+    category: "Commercial",
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCcXt0RMjmJxM6YjwVJoHr7TiJdu9hUpNpeT5hrD3rX7d_K8fnOBvaqd6qZNmXAzT86OXp7NYgR-L2ylzIuUXxSwGOOD1Lj3KGOUWiGAPn8R_Sbk3UJGem4aCpaxqPH6gflCqZCyHm13YCXoujzQpiHHA3TnDXrZG72icAKUqPzlIUOS1V30TtOqaogygnWz5MXiTBa3zvTm7lqOk_KdAOlvpqCZqxKUJ3RZPpTi6IbYZsnc_jxtVHPUfexqYTf2iT29nbh-qs6zYo",
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop",
   },
   {
-    title: "NexGen HQ",
-    category: "COMMERCIAL",
+    title: "Minimal Living Room",
+    category: "Interior",
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAS8oNqq6hbygax11n3UEppXOvgx8fWUlLYmdjwQduxGgWQ-hficv0k-Nj9dYdMWH0osJaeElNkoWKD5Tsw-332hM0GTBQz1RECM9P8zJy3gdMpv-pZhSRWfcRR27BMFOMoJu2n49ZFHlImxpL0PvfYNOCXOVznmDa2ZzsKBHha88Sqc-ZednLDQJ0ALaFXvUjBB5PMD7dNMLd1h0X5oZn076CcKfNBVZJAwzaZeVknhAkU23DghXAGZGk2FIkcypuHqI45sYmb8Cc",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Luxury Bedroom",
+    category: "Residential",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Modern Kitchen",
+    category: "Kitchen Design",
+    image:
+      "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Premium Workspace",
+    category: "Workspace",
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="max-w-7xl mx-auto px-6 pb-32">
-      <div className="flex justify-between items-end mb-16">
-        <div>
-          <h2 className="text-5xl font-bold text-lime-400 mb-2">
-            Recent Projects
-          </h2>
+    <section className="relative py-02 pb-10 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
+      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
 
-          <p className="uppercase tracking-[4px] text-sm text-zinc-500">
-            Curation of our latest work
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <span
+            className="
+              inline-flex
+              px-5
+              py-1.5
+              rounded-full
+              border
+              border-lime-400/20
+              bg-lime-400/10
+              text-lime-400
+              text-xs
+              tracking-[5px]
+              uppercase
+            "
+          >
+            Our Portfolio
+          </span>
 
-        <button className="hidden md:block border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition">
-          View All Work
-        </button>
-      </div>
+          <h2 className="mt-4 text-5xl md:text-6xl xl:text-7xl font-bold leading-[0.95]">
+            Featured
 
-      <div className="grid lg:grid-cols-12 gap-8 lg:h-[800px]">
-        {/* Large Project */}
-        <div className="lg:col-span-8 relative rounded-3xl overflow-hidden group h-[400px] lg:h-full border border-white/10">
-          <Image
-            fill
-            alt={projects[0].title}
-            src={projects[0].image}
-            className="object-cover group-hover:scale-110 transition duration-1000"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-10">
-            <span className="text-lime-400 font-semibold mb-2">
-              {projects[0].category}
+            <span className="text-lime-400 ml-4">
+              Projects
             </span>
+          </h2>
+           
 
-            <h3 className="text-3xl font-bold">
-              {projects[0].title}
-            </h3>
+          <p className="max-w-2xl mx-auto mt-4 text-zinc-400 text-lg">
+            Discover our carefully crafted residential, commercial,
+            and luxury interior projects designed with precision,
+            elegance, and timeless aesthetics.
+          </p>
+          <div className="relative max-w-5xl mx-auto mt-4 h-[2px]">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-400 to-transparent" />
+            <div className="absolute inset-0 blur-md bg-gradient-to-r from-transparent via-lime-400/80 to-transparent" />
           </div>
+
+         
         </div>
 
-        {/* Right Side */}
-        <div className="lg:col-span-4 flex flex-col gap-8">
-          {projects.slice(1).map((project) => (
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px]">
+          {projects.map((project, index) => (
             <div
-              key={project.title}
-              className="relative rounded-3xl overflow-hidden group flex-1 h-[300px] border border-white/10"
+              key={index}
+              className={`
+                group
+                relative
+                overflow-hidden
+                rounded-[32px]
+                border-b-2
+                border-lime-400/60
+                bg-[#111515]
+                ${
+                  project.large
+                    ? "md:col-span-2 md:row-span-2"
+                    : ""
+                }
+              `}
             >
               <Image
-                fill
-                alt={project.title}
                 src={project.image}
-                className="object-cover group-hover:scale-110 transition duration-1000"
+                alt={project.title}
+                fill
+                className="
+                  object-cover
+                  transition-all
+                  duration-1000
+                  group-hover:scale-110
+                "
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
-                <span className="text-lime-400 font-semibold mb-1">
+              {/* Overlay */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black
+                  via-black/30
+                  to-transparent
+                "
+              />
+
+              {/* Hover Glow */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-lime-400/10
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-500
+                "
+              />
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 p-8">
+                <span
+                  className="
+                    inline-block
+                    px-4
+                    py-2
+                    rounded-full
+                    bg-lime-400/15
+                    text-lime-400
+                    text-xs
+                    uppercase
+                    tracking-[3px]
+                    border
+                    border-lime-400/20
+                    mb-4
+                  "
+                >
                   {project.category}
                 </span>
 
-                <h3 className="text-2xl font-bold">
+                <h3
+                  className="
+                    text-2xl
+                    md:text-3xl
+                    font-bold
+                    mb-4
+                    group-hover:text-lime-400
+                    transition-all
+                  "
+                >
                   {project.title}
                 </h3>
+
+                <button
+                  className="
+                    opacity-0
+                    translate-y-6
+                    group-hover:opacity-100
+                    group-hover:translate-y-0
+                    transition-all
+                    duration-500
+                    text-lime-400
+                    font-semibold
+                  "
+                >
+                  View Project →
+                </button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-10">
+          <button
+            className="
+              bg-lime-400
+              text-black
+              px-10
+              py-5
+              rounded-full
+              font-bold
+       shadow-[0_0_30px_rgba(163,230,53,0.9)]
+              hover:scale-105
+              transition-all
+              duration-500
+            "
+          >
+            View All Projects
+          </button>
         </div>
       </div>
     </section>

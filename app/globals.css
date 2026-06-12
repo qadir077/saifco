@@ -39,3 +39,20 @@ body {
 .hover-lift:hover {
   transform: translateY(-8px);
 }
+@keyframes testimonialScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-slider {
+  animation: testimonialScroll 40s linear infinite;
+}
+
+.testimonial-slider:hover {
+  animation-play-state: paused;
+}

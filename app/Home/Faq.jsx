@@ -48,55 +48,137 @@ const faqs = [
 ];
 
 export default function FAQPage() {
-const [active, setActive] = useState(0);
+  const [active, setActive] = useState(0);
 
   return (
-    <main className="bg-black min-h-screen text-white">
-      {/* Hero */}
-      <section className="relative py-32 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <span className="text-lime-400 uppercase tracking-[5px] text-sm font-semibold">
-            Support Center
-          </span>
+    <section className="relative py-32 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
+      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
 
-          <h1 className="text-5xl md:text-7xl font-bold mt-6 mb-8">
-            Frequently Asked
-            <br />
-            Questions
-          </h1>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <span
+              className="
+                inline-flex
+                px-5
+                py-2
+                rounded-full
+                border
+                border-lime-400/20
+                bg-lime-400/10
+                text-lime-400
+                text-xs
+                uppercase
+                tracking-[5px]
+              "
+            >
+              FAQ & Support
+            </span>
 
-          <p className="max-w-2xl mx-auto text-zinc-400 text-lg">
-            Find answers to the most common questions about our
-            interior design services, process, pricing, and
-            project execution.
-          </p>
-        </div>
-      </section>
+            <h2 className="mt-8 text-5xl md:text-6xl font-bold leading-[0.95]">
+              Frequently Asked
+              <br />
+              <span className="text-lime-400">
+                Questions
+              </span>
+            </h2>
 
-      {/* FAQ */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-6">
+            <p className="mt-8 text-zinc-400 text-lg leading-relaxed max-w-xl">
+              Find answers to common questions about our interior
+              design services, project timelines, pricing, materials,
+              and complete turnkey solutions.
+            </p>
+
+            {/* Premium CTA Card */}
+            <div
+              className="
+                relative
+                mt-12
+                overflow-hidden
+                rounded-[32px]
+                border
+                border-lime-400/20
+                bg-[#111515]
+                p-8
+              "
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-lime-400/10 blur-[100px] rounded-full" />
+
+              <h3 className="text-3xl font-bold">
+                Need Expert Advice?
+              </h3>
+
+              <p className="mt-4 text-zinc-400 leading-relaxed">
+                Schedule a free consultation with our design team and
+                discover how we can transform your space into a luxury
+                experience.
+              </p>
+
+              <button
+                className="
+                  mt-8
+                  bg-lime-400
+                  text-black
+                  px-8
+                  py-4
+                  rounded-full
+                  font-bold
+                  hover:scale-105
+                  transition-all
+                  duration-500
+                "
+              >
+                Book Consultation
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Right Side FAQs */}
+          <div className="space-y-5">
             {faqs.map((faq, index) => {
               const isOpen = active === index;
 
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-[#1a1c1c] rounded-3xl border border-white/10 overflow-hidden"
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className="
+                    overflow-hidden
+                    rounded-[28px]
+                    border
+                    border-white/10
+                    bg-[#111515]
+                  "
                 >
                   <button
                     onClick={() =>
                       setActive(isOpen ? null : index)
                     }
-                    className="w-full p-8 flex justify-between items-center text-left"
+                    className="
+                      w-full
+                      p-7
+                      flex
+                      items-center
+                      justify-between
+                      text-left
+                    "
                   >
-                    <h3 className="text-xl md:text-2xl font-semibold pr-4">
+                    <h3 className="text-lg md:text-xl font-semibold pr-6">
                       {faq.question}
                     </h3>
 
                     <ChevronDown
-                      className={`transition-transform duration-300 text-lime-400 ${
+                      className={`text-lime-400 transition-all duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
@@ -118,44 +200,21 @@ const [active, setActive] = useState(0);
                           opacity: 0,
                         }}
                         transition={{
-                          duration: 0.3,
+                          duration: 0.35,
                         }}
                       >
-                        <div className="px-8 pb-8 text-zinc-400 leading-relaxed">
+                        <div className="px-7 pb-7 text-zinc-400 leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="pb-24">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="relative bg-[#121414] border border-white/10 rounded-[40px] p-12 md:p-20 text-center overflow-hidden">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-lime-400/10 rounded-full blur-[120px]" />
-
-            <h2 className="relative z-10 text-4xl md:text-6xl font-bold mb-8">
-              Still Have Questions?
-            </h2>
-
-            <p className="relative z-10 text-zinc-400 max-w-2xl mx-auto mb-10">
-              Our design experts are here to help you create
-              beautiful and functional spaces tailored to your
-              vision.
-            </p>
-
-            <button className="relative z-10 bg-lime-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
