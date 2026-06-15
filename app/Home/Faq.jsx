@@ -121,7 +121,9 @@ export default function FAQPage() {
                 experience.
               </p>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="
                   mt-8
                   bg-lime-400
@@ -130,13 +132,13 @@ export default function FAQPage() {
                   py-4
                   rounded-full
                   font-bold
-                  hover:scale-105
-                  transition-all
-                  duration-500
+                  shadow-[0_0_20px_rgba(163,230,53,0.4)]
+                  transition-shadow
+                  duration-300
                 "
               >
                 Book Consultation
-              </button>
+              </motion.button>
             </div>
           </motion.div>
 

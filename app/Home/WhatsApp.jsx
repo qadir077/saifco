@@ -1,9 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function WhatsAppButton() {
   return (
-    <a
+    <motion.a
       href="https://wa.me/919810263085"
       target="_blank"
       rel="noopener noreferrer"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
       className="fixed bottom-8 right-8 z-[999] group"
     >
       {/* Pulse Ring */}
@@ -82,6 +89,6 @@ export default function WhatsAppButton() {
           </p>
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 }

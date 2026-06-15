@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -57,12 +58,30 @@ export default function Testimonials() {
   return (
     <section className="relative py-16 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
-      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" 
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.2 }}
+        className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" 
+      />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
           <span
             className="
               inline-flex
@@ -96,10 +115,16 @@ export default function Testimonials() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-400 to-transparent" />
             <div className="absolute inset-0 blur-md bg-gradient-to-r from-transparent via-lime-400/80 to-transparent" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Carousel */}
-        <div className="relative overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative overflow-hidden"
+        >
           {/* Left Fade */}
           <div className="absolute left-0 top-0 h-full w-24 md:w-40 bg-gradient-to-r from-[#0c0f0f] to-transparent z-20" />
 
@@ -167,7 +192,7 @@ export default function Testimonials() {
               )
             )}
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

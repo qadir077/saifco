@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -41,18 +42,51 @@ const projects = [
 ];
 
 export default function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 30 },
+    show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  };
+
   return (
-    <section className="relative py-02 pb-10 overflow-hidden">
+    <section className="relative py-20 pb-20 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
-      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" 
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.2 }}
+        className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" 
+      />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
           <span
             className="
-              inline-flex
+              inline-block
               px-5
               py-1.5
               rounded-full
@@ -70,12 +104,10 @@ export default function Projects() {
 
           <h2 className="mt-4 text-5xl md:text-6xl xl:text-7xl font-bold leading-[0.95]">
             Featured
-
             <span className="text-lime-400 ml-4">
               Projects
             </span>
           </h2>
-           
 
           <p className="max-w-2xl mx-auto mt-4 text-zinc-400 text-lg">
             Discover our carefully crafted residential, commercial,
@@ -86,15 +118,21 @@ export default function Projects() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-400 to-transparent" />
             <div className="absolute inset-0 blur-md bg-gradient-to-r from-transparent via-lime-400/80 to-transparent" />
           </div>
-
-         
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px]">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px]"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
+              whileHover={{ y: -6 }}
               className={`
                 group
                 relative
@@ -196,13 +234,21 @@ export default function Projects() {
                   View Project →
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA */}
-        <div className="text-center mt-10">
-          <button
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="
               bg-lime-400
               text-black
@@ -210,15 +256,14 @@ export default function Projects() {
               py-5
               rounded-full
               font-bold
-       shadow-[0_0_30px_rgba(163,230,53,0.9)]
-              hover:scale-105
-              transition-all
-              duration-500
+              shadow-[0_0_30px_rgba(163,230,53,0.6)]
+              transition-shadow
+              duration-300
             "
           >
             View All Projects
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

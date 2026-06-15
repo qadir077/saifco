@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Home,
   Building2,
@@ -8,6 +10,7 @@ import {
   LayoutGrid,
   Warehouse,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -61,15 +64,48 @@ const services = [
 ];
 
 export default function Services() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: 30, opacity: 0 },
+    show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 80, damping: 14 } },
+  };
+
   return (
     <section className="relative py-32 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
-      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute left-0 top-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" 
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.2 }}
+        className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-lime-400/5 blur-[180px] rounded-full" 
+      />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-24">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-24"
+        >
           <span
             className="
               inline-block
@@ -107,16 +143,24 @@ export default function Services() {
 
             <div className="absolute inset-0 blur-md bg-gradient-to-r from-transparent via-lime-400/80 to-transparent" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Services */}
-        <div className="space-y-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="space-y-6"
+        >
           {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
-              <div
+              <motion.div
                 key={service.title}
+                variants={cardVariants}
+                whileHover={{ y: -6, borderColor: "rgba(163, 230, 53, 0.4)", backgroundColor: "rgba(163, 230, 53, 0.03)" }}
                 className="
                   group
                   bg-[#111515]
@@ -124,16 +168,14 @@ export default function Services() {
                   border-white/10
                   rounded-[32px]
                   p-8
-                  hover:border-lime-400/30
-                  hover:bg-lime-400/5
                   transition-all
-                  duration-500
+                  duration-300
                 "
               >
                 <div className="grid lg:grid-cols-12 gap-8 items-center">
                   {/* Number */}
                   <div className="lg:col-span-2">
-                    <span className="text-5xl md:text-6xl font-bold text-zinc-800 group-hover:text-lime-400/30 transition-all">
+                    <span className="text-5xl md:text-6xl font-bold text-zinc-800 group-hover:text-lime-400/30 transition-all duration-300">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -151,7 +193,7 @@ export default function Services() {
                         justify-center
                         group-hover:bg-lime-400
                         transition-all
-                        duration-500
+                        duration-300
                       "
                     >
                       <Icon
@@ -160,6 +202,7 @@ export default function Services() {
                           text-lime-400
                           group-hover:text-black
                           transition-all
+                          duration-300
                         "
                       />
                     </div>
@@ -197,21 +240,29 @@ export default function Services() {
                         group-hover:text-black
                         group-hover:rotate-45
                         transition-all
-                        duration-500
+                        duration-300
                       "
                     >
                       →
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <button
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-20 text-center"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="
               bg-lime-400
               text-black
@@ -219,15 +270,14 @@ export default function Services() {
               py-4
               rounded-full
               font-bold
-shadow-[0_0_30px_rgba(163,230,53,0.9)]
-              hover:scale-105
-              transition-all
-              duration-500
+              shadow-[0_0_30px_rgba(163,230,53,0.6)]
+              transition-shadow
+              duration-300
             "
           >
             Explore All Services
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

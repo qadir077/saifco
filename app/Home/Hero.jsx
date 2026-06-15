@@ -152,14 +152,48 @@
 
 
 
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  };
+
+  const buttonVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0a0d0d]">
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-lime-400/10 blur-[180px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-lime-400/5 blur-[200px] rounded-full" />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute top-0 left-0 w-[500px] h-[500px] bg-lime-400/10 blur-[180px] rounded-full" 
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.3 }}
+        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-lime-400/5 blur-[200px] rounded-full" 
+      />
 
       {/* Grid Pattern */}
       <div
@@ -170,19 +204,29 @@ export default function Hero() {
       "
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* LEFT */}
-          <div>
-            <div className="inline-flex items-center gap-3 border border-lime-400/20 bg-lime-400/5 px-3 py-1.5 rounded-full mb-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div 
+              variants={itemVariants}
+              className="inline-flex items-center gap-3 border border-lime-400/20 bg-lime-400/5 px-3 py-1.5 rounded-full mb-4"
+            >
               <span className="w-2 h-2 rounded-full bg-lime-400"></span>
 
               <span className="text-xs uppercase tracking-[4px] text-lime-400">
                 Interior Design Studio
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-6xl md:text-7xl xl:text-[90px] leading-[0.9] font-black tracking-[-4px]">
+            <motion.h1 
+              variants={itemVariants}
+              className="text-6xl md:text-7xl xl:text-[90px] leading-[0.9] font-black tracking-[-4px]"
+            >
               DESIGNING
               <br />
               <span className="text-lime-400">
@@ -190,26 +234,43 @@ export default function Hero() {
               </span>
               <br />
               THAT INSPIRE
-            </h1>
+            </motion.h1>
 
-            <p className="mt-4 text-zinc-400 text-lg max-w-xl leading-relaxed">
+            <motion.p 
+              variants={itemVariants}
+              className="mt-4 text-zinc-400 text-lg max-w-xl leading-relaxed"
+            >
               Crafting sophisticated residential and commercial interiors
               through innovative design, premium materials, and timeless
               aesthetics.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4 mt-6">
-              <button className="bg-lime-400 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+            <motion.div 
+              variants={buttonVariants}
+              className="flex flex-wrap gap-4 mt-6"
+            >
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-lime-400 text-black px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_35px_rgba(163,230,53,0.6)]"
+              >
                 Get Consultation
-              </button>
+              </motion.button>
 
-              <button className="border border-white/15 px-8 py-4 rounded-full hover:border-lime-400 hover:text-lime-400 transition">
+              <motion.button 
+                whileHover={{ scale: 1.05, borderColor: "rgba(163,230,53,0.6)", color: "rgba(163,230,53,1)" }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-white/15 px-8 py-4 rounded-full text-white transition-colors"
+              >
                 View Portfolio
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-8 mt-8 max-w-lg">
+            <motion.div 
+              variants={itemVariants}
+              className="grid grid-cols-2 gap-8 mt-8 max-w-lg"
+            >
               <div>
                 <h3 className="text-5xl font-bold text-lime-400">
                   120+
@@ -227,22 +288,26 @@ export default function Hero() {
                   Years Experience
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* RIGHT */}
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="relative"
+          >
             {/* Main Image */}
-            <div className="relative aspect-[4/5] overflow-hidden ">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
               <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGZuFsZOLrXBk60lkm--nY_6Pkz9mk5CS50UhlE0EwAcr3q8pJASXDbT9oAsHfT-veuRVqXI7ZmX9k2uD_4r-2qkT2dmuzeNPe6UCO9J7013qoYSJxJypcmBggr_hY5jOcP19ijM3i6A_2cv4aA7x_6VnAMwYOcYccz2Ux569wEfmHivWlDDV0LSo6cIRVoFRUsbTEkOV0EHpBe58vHq5wY8vYYxyZQcejRFhAKavCqY9SxHCByj0_LD2QB-3-LsRQnGpmZIRoH7w"
                 alt="Luxury Interior"
                 fill
-                className="object-cover hover:scale-110 transition duration-700"
+                className="object-cover hover:scale-105 transition duration-700"
               />
             </div>
-
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
