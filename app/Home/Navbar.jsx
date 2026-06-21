@@ -135,7 +135,7 @@ export default function Navbar() {
           {navLinks.map((item) => (
             <motion.div key={item} variants={linkItemVariants}>
               <Link
-                href="#"
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 className="relative px-0 py-2 text-white transition-all duration-300 group"
               >
                 <span className="relative z-10 group-hover:text-lime-400 transition-colors duration-300">
