@@ -128,6 +128,8 @@ export default function About() {
                 className="object-cover hover:scale-105 transition duration-700"
               />
             </div>
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-lime-400 rounded-br-[30px] pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-lime-400 rounded-tl-[30px]  pointer-events-none" />
           </motion.div>
 
           {/* Content Side */}
@@ -188,7 +190,7 @@ export default function About() {
               ))}
             </motion.div>
 
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex mx-auto justify-center lg:justify-start">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -90,8 +90,8 @@ export default function Overview() {
               </div>
             </div>
             {/* Design accents */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-lime-400/30 rounded-br-3xl pointer-events-none" />
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-lime-400/30 rounded-tl-3xl pointer-events-none" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-lime-400 rounded-br-[30px] pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-lime-400 rounded-tl-[30px]  pointer-events-none" />
           </motion.div>
 
         </div>

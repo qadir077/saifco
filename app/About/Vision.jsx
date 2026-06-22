@@ -1,103 +1,213 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { Eye, Target, Sparkles, Compass } from "lucide-react";
+import {
+  Compass,
+  Gem,
+  Lightbulb,
+} from "lucide-react";
 
 export default function Vision() {
-  const pillars = [
+  const cards = [
     {
-      icon: <Eye className="text-lime-400" size={24} />,
+      icon: Lightbulb,
       title: "Our Vision",
-      desc: "To be recognized globally as a benchmark for ultra-luxury interior design, inspiring through forward-thinking spaces that balance state-of-the-art innovation with timeless class.",
+      description:
+        "To redefine modern interior design by creating inspiring environments that seamlessly blend beauty, comfort, and functionality.",
     },
     {
-      icon: <Target className="text-lime-400" size={24} />,
+      icon: Compass,
       title: "Our Mission",
-      desc: "To carefully understand our client's vision and elevate it beyond expectation, integrating functionality with superior craftsmanship and high-performance materials.",
+      description:
+        "Delivering exceptional interior experiences through innovative thinking, premium craftsmanship, and meticulous execution.",
     },
     {
-      icon: <Compass className="text-lime-400" size={24} />,
-      title: "Design Philosophy",
-      desc: "We believe inside spaces should harmonize naturally with their surroundings. Every shape, texture, and light source is chosen intentionally to induce tranquility and power.",
-    },
-    {
-      icon: <Sparkles className="text-lime-400" size={24} />,
-      title: "Uncompromising Quality",
-      desc: "From hand-selecting Italian marble slabs to styling bespoke hardware, we maintain absolute devotion to detail. Near perfection is the baseline for everything we build.",
+      icon: Gem,
+      title: "Our Philosophy",
+      description:
+        "Every space should reflect the personality, lifestyle, and aspirations of its owner while maintaining timeless elegance.",
     },
   ];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
   return (
-    <section className="relative py-24 overflow-hidden border-b border-white/5 bg-[#0a0d0d]">
-      {/* Background blur */}
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-lime-400/5 blur-[160px] rounded-full" />
+    <section className="relative py-32 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-lime-400/10 blur-[220px] rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-[4px] text-lime-400 font-semibold">
-            Pillars of Excellence
-          </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold mt-3 text-white uppercase">
-            OUR PURPOSE & <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-lime-500">PHILOSOPHY</span>
-          </h2>
-          <div className="w-24 h-[2px] bg-lime-400 mx-auto mt-4" />
-        </div>
-
-        {/* Cards Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          {pillars.map((pillar, i) => (
-            <motion.div
-              key={i}
-              variants={cardVariants}
-              whileHover={{ 
-                y: -8, 
-                borderColor: "rgba(163, 230, 53, 0.4)",
-                backgroundColor: "rgba(18, 22, 22, 0.6)",
-                boxShadow: "0 10px 30px -10px rgba(163, 230, 53, 0.15)"
-              }}
-              className="bg-[#111515] border border-white/5 p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden"
-            >
-              {/* Neon border-top highlight */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-lime-400/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+          <span
+            className="
+              inline-flex
+              px-5
+              py-2
+              rounded-full
+              border
+              border-lime-400/20
+              bg-lime-400/10
+              text-lime-400
+              tracking-[4px]
+              uppercase
+              text-xs
+            "
+          >
+            Design Philosophy
+          </span>
 
-              <div className="w-12 h-12 rounded-2xl bg-lime-400/10 flex items-center justify-center mb-6 border border-lime-400/20 group-hover:bg-lime-400 group-hover:text-black transition-colors duration-300">
-                {pillar.icon}
-              </div>
+          <h2 className="mt-8 text-5xl md:text-7xl font-extrabold leading-[0.95]">
+            The Principles
+            <br />
+            Behind Every
+            <span className="text-lime-400">
+              {" "}Masterpiece
+            </span>
+          </h2>
 
-              <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-lime-400 transition-colors duration-300">
-                {pillar.title}
-              </h3>
-
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                {pillar.desc}
-              </p>
-            </motion.div>
-          ))}
+          <p className="mt-8 text-zinc-400 text-lg leading-relaxed">
+            Every interior we create is guided by a commitment
+            to excellence, innovation, and timeless luxury.
+            These values shape every project from concept
+            to completion.
+          </p>
         </motion.div>
 
+        {/* Cards */}
+        <div className="relative mt-24">
+          {/* Center Orb */}
+          <motion.div
+            animate={{
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 5,
+              ease: "easeInOut",
+            }}
+            className="
+              hidden
+              lg:block
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              w-52
+              h-52
+              rounded-full
+              bg-lime-400/10
+              blur-[60px]
+            "
+          />
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {cards.map((card, index) => {
+              const Icon = card.icon;
+
+              return (
+                <motion.div
+                  key={card.title}
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.15,
+                  }}
+                  whileHover={{
+                    y: -10,
+                    scale: 1.02,
+                  }}
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-[32px]
+                    border
+                    border-white/10
+                    bg-white/5
+                    backdrop-blur-xl
+                    p-8
+                  "
+                >
+                  {/* Hover Glow */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      opacity-0
+                      group-hover:opacity-100
+                      transition-opacity
+                      duration-500
+                      bg-gradient-to-b
+                      from-lime-400/5
+                      via-transparent
+                      to-transparent
+                    "
+                  />
+
+                  {/* Icon */}
+                  <div
+                    className="
+                      w-16
+                      h-16
+                      rounded-2xl
+                      bg-lime-400/10
+                      border
+                      border-lime-400/20
+                      flex
+                      items-center
+                      justify-center
+                    "
+                  >
+                    <Icon
+                      size={30}
+                      className="text-lime-400"
+                    />
+                  </div>
+
+                  <h3 className="mt-8 text-2xl font-bold">
+                    {card.title}
+                  </h3>
+
+                  <p className="mt-5 text-zinc-400 leading-relaxed">
+                    {card.description}
+                  </p>
+
+                  {/* Bottom Line */}
+                  <motion.div
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+                      h-[2px]
+                      bg-lime-400
+                    "
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.3,
+                    }}
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

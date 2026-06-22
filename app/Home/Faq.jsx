@@ -45,10 +45,70 @@ const faqs = [
     answer:
       "Simply contact us through our website or schedule a consultation. Our team will discuss your requirements and guide you through the process.",
   },
+  {
+    question: "Do you offer site visits before starting a project?",
+    answer:
+      "Yes. Our team conducts detailed site visits to understand the space, take measurements, and discuss your vision before creating design concepts.",
+  },
+  {
+    question: "Can you design small apartments and compact spaces?",
+    answer:
+      "Absolutely. We specialize in maximizing functionality and aesthetics for compact homes, apartments, and studio spaces.",
+  },
+  {
+    question: "Do you provide customized furniture designs?",
+    answer:
+      "Yes. We create bespoke furniture solutions tailored to your space, style preferences, and functional requirements.",
+  },
+  {
+    question: "What design styles do you specialize in?",
+    answer:
+      "We work across modern, contemporary, minimalist, luxury, industrial, Scandinavian, traditional, and fully customized design styles.",
+  },
+  {
+    question: "Can I make changes during project execution?",
+    answer:
+      "Yes. Minor modifications can be accommodated during execution, though timeline and budget adjustments may apply depending on the scope.",
+  },
+  {
+    question: "Do you offer commercial interior design services?",
+    answer:
+      "Yes. We design offices, retail stores, restaurants, hospitality spaces, clinics, and various commercial environments.",
+  },
+  {
+    question: "How is project pricing determined?",
+    answer:
+      "Pricing depends on project size, materials, customization requirements, design complexity, and execution scope.",
+  },
+  {
+    question: "Do you provide material recommendations?",
+    answer:
+      "Yes. We guide clients in selecting premium materials, finishes, lighting, fabrics, and decor elements that suit both aesthetics and budget.",
+  },
+  {
+    question: "Will I receive a detailed project timeline?",
+    answer:
+      "Yes. Before execution begins, we provide a structured timeline outlining design, procurement, installation, and completion milestones.",
+  },
+  {
+    question: "Do you offer post-project support?",
+    answer:
+      "Yes. We provide support after project completion to address adjustments, maintenance guidance, and client queries.",
+  },
+  {
+    question: "Can you work on projects outside my city?",
+    answer:
+      "Yes. Depending on project requirements, we can manage and execute projects across multiple cities and regions.",
+  },
+  {
+    question: "How do I schedule my first consultation?",
+    answer:
+      "You can contact us through our website, phone, or email. Our team will arrange a consultation to understand your requirements and project goals.",
+  },
 ];
 
 export default function FAQPage() {
-  const [active, setActive] = useState(0);
+const [active, setActive] = useState(null);
 
   return (
     <section className="relative py-32 overflow-hidden">
@@ -59,11 +119,12 @@ export default function FAQPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+        <motion.div
+  initial={{ opacity: 0, x: -60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="sticky top-28 self-start"
+>
             <span
               className="
                 inline-flex
@@ -107,11 +168,12 @@ export default function FAQPage() {
                 border-lime-400/20
                 bg-[#111515]
                 p-8
+                text-center
               "
             >
-              <div className="absolute top-0 right-0 w-40 h-40 bg-lime-400/10 blur-[100px] rounded-full" />
+              <div className="absolute  top-0 right-0 w-40 h-40 bg-lime-400/10 blur-[100px] rounded-full" />
 
-              <h3 className="text-3xl font-bold">
+              <h3 className="text-3xl text-lime-400 font-bold">
                 Need Expert Advice?
               </h3>
 
@@ -143,7 +205,8 @@ export default function FAQPage() {
           </motion.div>
 
           {/* Right Side FAQs */}
-          <div className="space-y-5">
+{/* Right Side FAQs */}
+<div className="space-y-5 lg:max-h-[900px] lg:overflow-y-auto pr-2">
             {faqs.map((faq, index) => {
               const isOpen = active === index;
 
