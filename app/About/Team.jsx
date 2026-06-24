@@ -25,7 +25,7 @@ const team = [
     image: "/team/team-2.jpg",
   },
   {
-    name: "Emily Johnsons",
+    name: "Emily Johnson",
     role: "Senior Interior Designer",
     image: "/team/team-3.jpg",
   },
