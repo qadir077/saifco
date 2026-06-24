@@ -108,7 +108,7 @@ const faqs = [
 ];
 
 export default function FAQPage() {
-const [active, setActive] = useState(null);
+  const [active, setActive] = useState(null);
 
   return (
     <section className="relative py-32 overflow-hidden">
@@ -119,12 +119,12 @@ const [active, setActive] = useState(null);
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side */}
-        <motion.div
-  initial={{ opacity: 0, x: -60 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  className="sticky top-28 self-start"
->
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="sticky top-28 self-start"
+          >
             <span
               className="
                 inline-flex
@@ -205,8 +205,8 @@ const [active, setActive] = useState(null);
           </motion.div>
 
           {/* Right Side FAQs */}
-{/* Right Side FAQs */}
-<div className="space-y-5 lg:max-h-[900px] lg:overflow-y-auto pr-2">
+          {/* Right Side FAQs */}
+          <div className="space-y-5 lg:max-h-[900px] lg:overflow-y-auto pr-2">
             {faqs.map((faq, index) => {
               const isOpen = active === index;
 
@@ -243,9 +243,8 @@ const [active, setActive] = useState(null);
                     </h3>
 
                     <ChevronDown
-                      className={`text-lime-400 transition-all duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={`text-lime-400 transition-all duration-300 ${isOpen ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 
