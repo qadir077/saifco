@@ -48,10 +48,16 @@ export default function OurStory() {
               "
             >
               <Image
-                src="/about-interior.jpg"
-                alt="Luxury Interior"
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop"
+                alt="Luxury Interior Design"
                 fill
-                className="object-cover"
+                priority
+                className="
+    object-cover
+    transition-transform
+    duration-[2000ms]
+    group-hover:scale-105
+  "
               />
 
               {/* Overlay */}

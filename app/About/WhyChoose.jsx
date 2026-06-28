@@ -65,13 +65,19 @@ export default function WhyChoose() {
                 h-[700px]
               "
             >
-              <Image
-                src="/luxury-interior-2.jpg"
-                alt="Luxury Interior"
-                fill
-                className="object-cover"
-              />
-
+            <Image
+                         src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?q=80&w=1200&auto=format&fit=crop"
+                         alt="Luxury Interior Design"
+                         fill
+                         priority
+                         className="
+             object-cover
+             transition-transform
+             duration-[2000ms]
+             group-hover:scale-105
+           "
+                       />
+         
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             </div>
 

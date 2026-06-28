@@ -20,7 +20,7 @@ export default function AboutHero() {
         "
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl text-center mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,8 @@ export default function AboutHero() {
               uppercase
               tracking-[4px]
               text-xs
-              mb-10
+              mb-4
+              mt-30
             "
           >
             About SAIFCO Interior

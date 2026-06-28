@@ -24,7 +24,7 @@ const page = () => {
       <Gallery/>
       <Overview/>
       <Team/>
-      <ContactInfo/>
+
       <Footer />
     </div>
   )

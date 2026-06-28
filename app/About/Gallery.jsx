@@ -30,12 +30,12 @@ export default function Gallery() {
       category: "Wellness Areas",
       desc: "Textured concrete walls coupled with seamless glass and brushed bronze hardware.",
     },
-    {
-      url: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?q=80&w=1200&auto=format&fit=crop",
-      title: "The Obsidian Study",
-      category: "Workspaces",
-      desc: "Deep ash wood custom cabinetry designed with integrated ambient lighting profiles.",
-    },
+ {
+  url: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?q=80&w=1200&auto=format&fit=crop",
+  title: "The Obsidian Study",
+  category: "Workspaces",
+  desc: "Deep ash wood custom cabinetry designed with integrated ambient lighting profiles.",
+},
     {
       url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop",
       title: "Helical Staircase",
