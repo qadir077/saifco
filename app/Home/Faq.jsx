@@ -40,71 +40,7 @@ const faqs = [
     answer:
       "Yes. We specialize in transforming existing residential and commercial spaces through thoughtful renovation and remodeling services.",
   },
-  {
-    question: "How do I get started?",
-    answer:
-      "Simply contact us through our website or schedule a consultation. Our team will discuss your requirements and guide you through the process.",
-  },
-  {
-    question: "Do you offer site visits before starting a project?",
-    answer:
-      "Yes. Our team conducts detailed site visits to understand the space, take measurements, and discuss your vision before creating design concepts.",
-  },
-  {
-    question: "Can you design small apartments and compact spaces?",
-    answer:
-      "Absolutely. We specialize in maximizing functionality and aesthetics for compact homes, apartments, and studio spaces.",
-  },
-  {
-    question: "Do you provide customized furniture designs?",
-    answer:
-      "Yes. We create bespoke furniture solutions tailored to your space, style preferences, and functional requirements.",
-  },
-  {
-    question: "What design styles do you specialize in?",
-    answer:
-      "We work across modern, contemporary, minimalist, luxury, industrial, Scandinavian, traditional, and fully customized design styles.",
-  },
-  {
-    question: "Can I make changes during project execution?",
-    answer:
-      "Yes. Minor modifications can be accommodated during execution, though timeline and budget adjustments may apply depending on the scope.",
-  },
-  {
-    question: "Do you offer commercial interior design services?",
-    answer:
-      "Yes. We design offices, retail stores, restaurants, hospitality spaces, clinics, and various commercial environments.",
-  },
-  {
-    question: "How is project pricing determined?",
-    answer:
-      "Pricing depends on project size, materials, customization requirements, design complexity, and execution scope.",
-  },
-  {
-    question: "Do you provide material recommendations?",
-    answer:
-      "Yes. We guide clients in selecting premium materials, finishes, lighting, fabrics, and decor elements that suit both aesthetics and budget.",
-  },
-  {
-    question: "Will I receive a detailed project timeline?",
-    answer:
-      "Yes. Before execution begins, we provide a structured timeline outlining design, procurement, installation, and completion milestones.",
-  },
-  {
-    question: "Do you offer post-project support?",
-    answer:
-      "Yes. We provide support after project completion to address adjustments, maintenance guidance, and client queries.",
-  },
-  {
-    question: "Can you work on projects outside my city?",
-    answer:
-      "Yes. Depending on project requirements, we can manage and execute projects across multiple cities and regions.",
-  },
-  {
-    question: "How do I schedule my first consultation?",
-    answer:
-      "You can contact us through our website, phone, or email. Our team will arrange a consultation to understand your requirements and project goals.",
-  },
+
 ];
 
 export default function FAQPage() {
@@ -161,7 +97,7 @@ export default function FAQPage() {
             <div
               className="
                 relative
-                mt-12
+                mt-22
                 overflow-hidden
                 rounded-[32px]
                 border
@@ -221,7 +157,7 @@ export default function FAQPage() {
                     overflow-hidden
                     rounded-[28px]
                     border
-                    border-white/10
+  border-lime-400/20
                     bg-[#111515]
                   "
                 >

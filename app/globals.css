@@ -48,7 +48,9 @@ body {
     transform: translateX(-50%);
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .testimonial-slider {
   animation: testimonialScroll 40s linear infinite;
 }

@@ -14,14 +14,32 @@ export default function Navbar() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navLinks = [
-    "Home",
-    "About",
-    "Services",
-    "Portfolio",
-    "Process",
-    "Contact",
-  ];
+const navLinks = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About",
+    href: "/About",
+  },
+  {
+    name: "Services",
+    href: "/Services",
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    name: "Process",
+    href: "/process",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
 
   useEffect(() => {
     const nav = navRef.current;
@@ -133,21 +151,21 @@ export default function Navbar() {
           className="hidden lg:flex gap-8 items-center"
         >
           {navLinks.map((item) => (
-            <motion.div key={item} variants={linkItemVariants}>
-              <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="relative px-0 py-2 text-white transition-all duration-300 group"
-              >
-                <span className="relative z-10 group-hover:text-lime-400 transition-colors duration-300">
-                  {item}
-                </span>
+  <motion.div key={item.name} variants={linkItemVariants}>
+    <Link
+      href={item.href}
+      className="relative px-0 py-2 text-white transition-all duration-300 group"
+    >
+      <span className="relative z-10 group-hover:text-lime-400 transition-colors duration-300">
+        {item.name}
+      </span>
 
-                <span className="absolute inset-0 scale-75 opacity-0 rounded-full bg-lime-400/10 blur-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
+      <span className="absolute inset-0 scale-75 opacity-0 rounded-full bg-lime-400/10 blur-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
 
-                <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-0 bg-lime-400 transition-all duration-300 group-hover:w-16" />
-              </Link>
-            </motion.div>
-          ))}
+      <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-0 bg-lime-400 transition-all duration-300 group-hover:w-16" />
+    </Link>
+  </motion.div>
+))}
         </motion.div>
 
         {/* Desktop CTA */}
@@ -193,20 +211,17 @@ export default function Navbar() {
             className="absolute top-full left-0 w-full bg-[#121414] border-t border-white/10 lg:hidden z-50 shadow-2xl overflow-hidden"
           >
             <ul className="flex flex-col text-white">
-              {navLinks.map((item) => (
-                <li
-                  key={item}
-                  className="px-6 py-4 border-b border-white/5"
-                >
-                  <Link
-                    href="#"
-                    onClick={() => setMobileOpen(false)}
-                    className="block hover:text-lime-400 transition"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+        {navLinks.map((item) => (
+  <li key={item.name} className="px-6 py-4 border-b border-white/5">
+    <Link
+      href={item.href}
+      onClick={() => setMobileOpen(false)}
+      className="block hover:text-lime-400 transition"
+    >
+      {item.name}
+    </Link>
+  </li>
+))}
 
               <li className="p-6">
                 <button className="w-full bg-lime-400 text-black py-3 rounded-full font-bold">
