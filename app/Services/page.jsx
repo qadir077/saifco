@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 import Navbar from "../Home/Navbar";
 import Footer from "../Home/Footer";
 import WhatsApp from "../Home/WhatsApp";
+import Cta from "../Home/Cta"
 
 const services = [
   {
@@ -327,52 +328,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative py-20 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-7xl mx-auto px-6"
-        >
-          <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-[#111515] shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-10 md:p-16">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-lime-400/70 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-lime-400/40 to-transparent" />
-            <div className="absolute -top-20 -right-20 w-60 h-60 bg-lime-400/20 blur-[120px] rounded-full" />
-
-            <div className="relative z-10 text-center max-w-3xl mx-auto">
-              <span className="inline-flex px-5 py-2 rounded-full border border-lime-400/20 bg-lime-400/10 text-lime-400 text-xs tracking-[4px] uppercase mb-8">
-                Start Your Journey
-              </span>
-              <h2 className="text-5xl md:text-6xl font-extrabold leading-[0.95] mb-6">
-                Ready To Transform
-                <br />
-                <span className="text-lime-400">Your Space?</span>
-              </h2>
-              <p className="text-zinc-400 text-lg mb-10 leading-relaxed">
-                Let our expert design team create something extraordinary for
-                you. Book a free consultation and take the first step.
-              </p>
-              <div className="flex flex-wrap justify-center gap-5">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-lime-400 text-black px-10 py-5 rounded-full font-bold shadow-[0_0_30px_rgba(163,230,53,0.6)] transition-shadow duration-300"
-                >
-                  Get Free Consultation
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border border-white/10 bg-white/5 px-10 py-5 rounded-full font-bold hover:bg-white hover:text-black transition-all duration-500"
-                >
-                  View Portfolio
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
+   <Cta/>
 
       <WhatsApp />
       <Footer />

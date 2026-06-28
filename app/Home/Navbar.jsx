@@ -29,11 +29,11 @@ const navLinks = [
   },
   {
     name: "Portfolio",
-    href: "/portfolio",
+    href: "/Portfolio",
   },
   {
     name: "Process",
-    href: "/process",
+    href: "/Process",
   },
   {
     name: "Contact",

@@ -20,21 +20,7 @@ export default function CTA() {
 
   return (
     <section className="relative pb-22 overflow-hidden">
-      {/* Background Glow */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5 }}
-        className="absolute top-0 left-0 w-[600px] h-[600px] bg-lime-400/15 blur-[200px] rounded-full" 
-      />
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, delay: 0.2 }}
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-lime-400/10 blur-[180px] rounded-full" 
-      />
+   
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
