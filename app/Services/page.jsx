@@ -150,7 +150,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex px-5 py-2 rounded-full border border-lime-400/20 bg-lime-400/10 text-lime-400 uppercase tracking-[4px] text-xs mb-10"
+            className="inline-flex mx-auto px-5 py-2 c rounded-full border border-lime-400/20 bg-lime-400/10 text-lime-400 uppercase tracking-[4px] text-xs mb-10"
           >
             What We Offer
           </motion.span>
@@ -159,7 +159,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-8xl font-extrabold leading-[0.9]"
+            className="text-6xl md:text-8xl text-center font-extrabold leading-[0.9]"
           >
             Our Premium
             <br />

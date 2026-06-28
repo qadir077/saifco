@@ -56,10 +56,11 @@ const process = [
 
 export default function Page() {
   return (
+    <div>
     <section className="relative py-32 overflow-hidden bg-[#111515]">
-      <Navbar/>
+      <Navbar />
 
-     
+
 
       {/* Grid Overlay */}
       <div
@@ -72,7 +73,7 @@ export default function Page() {
         "
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto  px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 70 }}
@@ -118,7 +119,7 @@ export default function Page() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative mt-28">
+        <div className="relative mb-30 mt-28">
           {/* Center Line */}
           <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-lime-400/30 to-transparent -translate-x-1/2" />
 
@@ -147,10 +148,9 @@ export default function Page() {
                     relative
                     flex
                     items-center
-                    ${
-                      isLeft
-                        ? "lg:justify-start"
-                        : "lg:justify-end"
+                    ${isLeft
+                      ? "lg:justify-start"
+                      : "lg:justify-end"
                     }
                   `}
                 >
@@ -261,10 +261,12 @@ export default function Page() {
         </div>
 
         {/* Bottom CTA */}
-    <CTA/>
-    <WhatsAppButton/>
-    <Footer/>
+        <CTA />
+        <WhatsAppButton />
+     
       </div>
     </section>
+    <Footer/>
+    </div>
   );
 }
